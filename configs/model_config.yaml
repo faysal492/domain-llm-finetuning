@@ -1,0 +1,21 @@
+# Model Configuration
+model:
+  name: "mistralai/Mistral-7B-Instruct-v0.2"
+  path: "./models/finetuned/medical-llm"
+  
+quantization:
+  load_in_4bit: true
+  bnb_4bit_use_double_quant: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_compute_dtype: "bfloat16"
+
+inference:
+  max_tokens: 512
+  temperature: 0.7
+  top_p: 0.9
+  do_sample: true
+
+device:
+  use_cuda: true
+  device_map: "auto"
+
